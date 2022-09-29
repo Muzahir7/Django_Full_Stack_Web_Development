@@ -1,0 +1,9 @@
+Django Notes:
+
+note to be in the right directory and have django env activated.
+
+New Project: django-admin startproject project_name
+
+create app inside project: python manage.py startapp app_name
+
+run django project on server: python manage.py runserver
