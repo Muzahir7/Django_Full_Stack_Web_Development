@@ -7,3 +7,8 @@ New Project: django-admin startproject project_name
 create app inside project: python manage.py startapp app_name
 
 run django project on server: python manage.py runserver
+
+Process: create project -> create app -> create views (return HttpResponse)
+          -> urls (import views from app_file) (add url / path to urlpatterns)
+          ->settings.py (add app_file in INSTALLED_APPS)
+          -> runserver with python manage.py runserver
