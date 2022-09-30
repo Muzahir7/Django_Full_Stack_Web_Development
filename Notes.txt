@@ -12,3 +12,34 @@ Process: create project -> create app -> create views (return HttpResponse)
           -> urls (import views from app_file) (add url / path to urlpatterns)
           ->settings.py (add app_file in INSTALLED_APPS)
           -> runserver with python manage.py runserver
+
+          practice adding urls.py for each app. where project's urls.py will have this shape
+          from django.contrib import admin
+          from django.urls import path, include
+
+          urlpatterns = [
+              path('help/', include("AppTwo.urls")),
+              path('admin/', admin.site.urls),
+          ]
+
+          -> and the shape of urls.py in the app folder will look like this:
+          from django.urls import path
+          from AppTwo import views
+
+          urlpatterns = [
+              path('', views.help, name='help'),
+          ]
+
+Templates: Create a templates folder inside your project folder. Inside the settings.py
+            create the TEMPLATE_DIR by joining the BASE_DIR and 'templates' using pathlib
+            -> BASE_DIR = Path(__file__).resolve().parent.parent
+            ->TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'templates')
+            Now, inside the settings.py file go to the TEMPLATES -> DIRS and
+            put the directory for templates folder which is TEMPLATE_DIR.
+
+            Inside the templates folder create folders for each apps and then a html file inside app folder to make it more modular. put a template tag in the body
+            -> {{insert_me}}
+            Now, in the views.py in the app_name folder, edit the fucntion with this code
+            -> def index(request):
+                my_dict = {'insert_me':"Hello I am from views.py"}
+                return render(request,'app_name/index.html',context=my_dict)
