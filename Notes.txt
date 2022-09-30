@@ -43,3 +43,16 @@ Templates: Create a templates folder inside your project folder. Inside the sett
             -> def index(request):
                 my_dict = {'insert_me':"Hello I am from views.py"}
                 return render(request,'app_name/index.html',context=my_dict)
+
+Static File in Django:
+            create a static folder in the project folder.  create images folder inside the
+            static folder. Configure the directories in the settings.py like the template folder.
+            By scrolling down in settings.py you will see STATIC_URL = 'static/'. Under this
+            create a list STATICFILES_DIRS = [ STATIC_DIR, ].
+            ->STATIC_DIR = Path.joinpath('BASE_DIR', 'static')
+            Inside the html file do this under DOCTYPE
+            -> {% load static %}
+            and do this to render the image stored in static/Images
+            -> <img src="{% static "images/cr7.jpg" %}" alt="Uh Oh, didn't show!">
+            static files can be any files that don't change like css and html files as well not just Images
+            
