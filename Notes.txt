@@ -55,4 +55,15 @@ Static File in Django:
             and do this to render the image stored in static/Images
             -> <img src="{% static "images/cr7.jpg" %}" alt="Uh Oh, didn't show!">
             static files can be any files that don't change like css and html files as well not just Images
-            
+
+MODELS:
+# Models are Basically database tables. to create a database table we have to create a model and
+# Model is created using the class key word and inheret from the parent class models.model
+in the models folder inside the app folder import models from django.db
+We have to create the models and django takes care of creating the SQL code to create those models/tables in the database
+After the models are created, run command -> python manage.py migrate.
+Once the migration is applied, run -> python manage.py makemigration app_name
+Once done with this and see things like create model and stuff, then run -> python manage.py migrate
+
+Run -> python manage.py shell command it opens command like python
+you can access all objects inside the model with model_name.objects.all() example: Topic.objects.all()
