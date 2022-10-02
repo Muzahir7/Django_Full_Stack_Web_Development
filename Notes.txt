@@ -81,3 +81,22 @@ give a username, password and email
 run the server goto the browser and then /admin will take you to admin interface.
 
 --->any additions or changes you make in models folder run makemigration command and then migrate command
+
+Populating Script using the Faker Library:
+  Create a file named populate_app_name.py and write the code to populate the models inside this files
+  do the below imports in this file:
+          import os
+          os.environ.setdefault('DJANGO_SETTINGS_MODULE','first_project.settings')
+
+          import django
+          django.setup()
+
+          # FAKE POP Script
+          import random
+          from first_app.models import AccessRecord, WebPage, Topic (importing the models from app.models)
+          from faker import Faker
+  ***Reference the populate.py file in the first project for notes*** that populates the data to the Models
+  once, done with the code run the populate.py folder and once the script is populated run the runserver
+  go to the /admin page and check the populated data for those models in the admin interface of Django
+
+  
