@@ -67,3 +67,17 @@ Once done with this and see things like create model and stuff, then run -> pyth
 
 Run -> python manage.py shell command it opens command like python
 you can access all objects inside the model with model_name.objects.all() example: Topic.objects.all()
+to save a topic in the model type t = Topic(top_name="Social Network") then do t.save() this will be saved in the
+QuerySet. quit() to get out of python shell
+
+We can also edit the QuerySet using admin interface of Django.
+Inside app_folder/admin.py, import the models and then register them
+-> admin.site.register(model_name)
+
+In order to use admin interface we have to create a super user: run command inside the project folder
+-> python manage.py createsuperuser
+give a username, password and email
+
+run the server goto the browser and then /admin will take you to admin interface.
+
+--->any additions or changes you make in models folder run makemigration command and then migrate command
