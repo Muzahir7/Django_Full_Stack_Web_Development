@@ -62,7 +62,7 @@ MODELS:
 in the models folder inside the app folder import models from django.db
 We have to create the models and django takes care of creating the SQL code to create those models/tables in the database
 After the models are created, run command -> python manage.py migrate.
-Once the migration is applied, run -> python manage.py makemigration app_name
+Once the migration is applied, run -> python manage.py makemigrations app_name
 Once done with this and see things like create model and stuff, then run -> python manage.py migrate
 
 Run -> python manage.py shell command it opens command like python
@@ -98,5 +98,15 @@ Populating Script using the Faker Library:
   ***Reference the populate.py file in the first project for notes*** that populates the data to the Models
   once, done with the code run the populate.py folder and once the script is populated run the runserver
   go to the /admin page and check the populated data for those models in the admin interface of Django
+==========================================================================================================
 
+  MTV Model Template Views Paradigm:
+  First: In the views.py file we import any models that we will need to use
+  Second: Use the View to query the model for data that we will need
+  Third: Pass Results from the model to the templates
+  Fourth: Edit the template so that it is ready to accept and display the data from the model.
+  Fifth: Map a URL to the View.
+===========================================================================================================
+  DJANGO FORMS:
+  Create a forms folder inside the app_name folder
   
